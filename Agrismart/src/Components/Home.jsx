@@ -19,7 +19,7 @@ function Home() {
               one smart solution at a time.
             </h1>
             <div className="text-center">
-              <NavLink to="/main">
+              <NavLink to="/login">
                 <button className="mt-4 btn btn-outline-primary p-3 fs-3  rounded rounded-5 ">
                   Get Started
                 </button>
