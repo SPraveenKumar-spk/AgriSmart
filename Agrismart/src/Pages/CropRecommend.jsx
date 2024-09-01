@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../store/AuthContext";
 function CropRecommend() {
+    const {baseURL } = useAuth();
   const navigate = useNavigate();
   const [inputValue, setInputValues] = useState({
     nitrogen: "",
@@ -21,7 +23,7 @@ function CropRecommend() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`https://agrismart-new.onrender.com/api/croprecommend`, {
+      const response = await fetch(`${baseURL}/api/croprecommend`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
