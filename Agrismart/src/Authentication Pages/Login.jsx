@@ -60,10 +60,9 @@ function Login() {
         navigate("/main");
       } else {
         toast.error("Internal server error");
-        navigate("/login");
+        navigate("/");
       }
     } catch (err) {
-      console.log(err);
       toast.error("Invalid OTP");
     } finally {
       setLoading(false);
