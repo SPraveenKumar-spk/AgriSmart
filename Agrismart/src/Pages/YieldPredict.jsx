@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "../assets/YieldPredict.png";
+import { useAuth } from "../store/AuthContext";
 
 function YieldPredict() {
   const navigate = useNavigate();
+ const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
     state: "",
     crop: "",
@@ -25,7 +27,7 @@ function YieldPredict() {
     event.preventDefault();
 
     try {
-      const response = await fetch(`https://agrismart-new.onrender.com/api/yield`, {
+      const response = await fetch(`${baseURL}/api/yield`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
