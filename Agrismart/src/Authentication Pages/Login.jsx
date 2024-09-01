@@ -44,7 +44,7 @@ function Login() {
       toast.success("OTP verified successfully!");
 
       const response = await fetch(
-        "https://agrismart-new.onrender.com/generate-token",
+        "https://agrismart-zlv3.onrender.com/generate-token",
         {
           method: "POST",
           headers: {
