@@ -12,7 +12,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { useAuth } from "../store/AuthContext";
 
 function Login() {
-  const { storeToken } = useAuth();
+  const { storeToken,baseURL } = useAuth();
   const [otp, setOtp] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [loading, setLoading] = useState(false);
@@ -42,9 +42,9 @@ function Login() {
       setLoading(true);
       const data = await user.confirm(otp);
       toast.success("OTP verified successfully!");
-
+      console.log(`${baseURL}/generate-token`);
       const response = await fetch(
-        "https://agrismart-zlv3.onrender.com/generate-token",
+        `${baseURL}/generate-token`,
         {
           method: "POST",
           headers: {
