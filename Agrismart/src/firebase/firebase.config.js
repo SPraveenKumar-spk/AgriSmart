@@ -7,13 +7,13 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAQ0an_tkdsw9-7vcK6PaAyFc4MPktZcj8",
-  authDomain: "agrismart-cd927.firebaseapp.com",
-  projectId: "agrismart-cd927",
-  storageBucket: "agrismart-cd927.appspot.com",
-  messagingSenderId: "771621287115",
-  appId: "1:771621287115:web:d64844ea0866fd3586174e",
-  measurementId: "G-KJDERBF3K3"
+  apiKey: "AIzaSyBMtJn-kfBMtacEZ9sE4HyLmF2i_Qw-y90",
+  authDomain: "agrismart-97b7c.firebaseapp.com",
+  projectId: "agrismart-97b7c",
+  storageBucket: "agrismart-97b7c.appspot.com",
+  messagingSenderId: "248499823078",
+  appId: "1:248499823078:web:68ce71cfaccb7872bcb627",
+  measurementId: "G-DKVDJQJH7B"
 };
 
 // Initialize Firebase
