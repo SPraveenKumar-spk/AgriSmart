@@ -1,7 +1,6 @@
-// import { useAuth } from "../store/AuthContext";
+import { useAuth } from "../store/AuthContext";
 function Navbar() {
-  // const { isLoggedIn } = useAuth();
-  // const isLoggedIn = true;
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">
@@ -37,7 +36,7 @@ function Navbar() {
                   Contact
                 </a>
               </li>
-{/*               {isLoggedIn ? (
+              {isLoggedIn ? (
                 <li className="nav-item pe-3">
                   <a className="nav-link active" href="/logout">
                     Logout
@@ -51,7 +50,7 @@ function Navbar() {
                     </a>
                   </li>
                 </>
-              )} */}
+              )}
             </ul>
           </div>
         </div>
