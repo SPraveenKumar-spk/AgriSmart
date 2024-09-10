@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "../assets/FertilizerRecommend.png";
 import { useAuth } from "../store/AuthContext";
+
 function FertilizerRecommend() {
-  const { baseURL } = useAuth();
   const navigate = useNavigate();
+  const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
     temperature: "",
     humidity: "",

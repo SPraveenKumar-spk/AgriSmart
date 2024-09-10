@@ -6,6 +6,7 @@ import { useAuth } from "../store/AuthContext";
 function YieldPredict() {
   const { baseURL } = useAuth();
   const navigate = useNavigate();
+ const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
     state: "",
     crop: "",

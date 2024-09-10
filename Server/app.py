@@ -8,7 +8,7 @@ import tempfile
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'AgriSmart'
-app.config['CORS_ALLOW_ORIGINS'] = ['http://localhost:5173']
+app.config['CORS_ALLOW_ORIGINS'] = ['https://agrismart-ai.vercel.app']
 CORS(app)
 
 GITHUB_RAW_URL = "https://raw.githubusercontent.com/SPraveenKumar-spk/AgriSmart/main/Server/models/"

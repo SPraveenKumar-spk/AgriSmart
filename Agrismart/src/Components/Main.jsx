@@ -1,8 +1,6 @@
 import Navbar from "./Navbar";
 import Crop from "../assets/crop.jpeg";
-import Seed from "../assets/seedQuality.jpg";
 import Fertilizer from "../assets/fertilizer2.png";
-import Disease from "../assets/cropdisease.png";
 import Yield from "../assets/yield.jpg";
 import Footer from "./Footer";
 import { NavLink } from "react-router-dom";
@@ -48,34 +46,6 @@ function Main() {
             <div className="col-lg-6 mb-4 mb-lg-0 order-lg-2">
               <img
                 className="img-fluid w-100 rounded-4"
-                src={Seed}
-                alt="Seed image"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="text-center">Seed Quality Detection</h2>
-              <p className="px-lg-5 pt-3 fs-5 text-center text-lg-start">
-                Seed quality detection systems leverage advanced technologies
-                like image processing. These systems assess factors such as
-                size, weight, internal structure to guarantee optimal
-                germination and growth. By detecting impurities and measuring
-                moisture content, they ensure the highest standards of seed
-                purity and viability, leading to more successful and sustainable
-                agricultural outcomes.
-              </p>
-              <div className="d-flex justify-content-center  mt-5">
-                <button className="btn btn-outline-primary me-3">
-                  Analyze Now
-                </button>
-                <button className="btn btn-outline-secondary">Know More</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="row align-items-center mb-5">
-            <div className="col-lg-6 mb-4 mb-lg-0">
-              <img
-                className="img-fluid w-100 rounded-4"
                 src={Fertilizer}
                 alt="Fertilizer image"
               />
@@ -94,36 +64,6 @@ function Main() {
                 <NavLink to="/fertilizerrecommend">
                   <button className="btn btn-outline-primary me-3">
                     Get Recommendations
-                  </button>
-                </NavLink>
-                <button className="btn btn-outline-secondary">Know More</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="row align-items-center mb-5">
-            <div className="col-lg-6 mb-4 mb-lg-0 order-lg-2">
-              <img
-                className="img-fluid w-100 rounded-4"
-                src={Disease}
-                alt="Disease image"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="text-center ">Crop Disease Detection</h2>
-              <p className="px-lg-5 pt-3 fs-5 text-center text-lg-start">
-                Crop disease detection systems employ modern technologies such
-                as image recognition, and AI to identify signs of disease in
-                crops at an early stage. By analyzing patterns in leaf color,
-                shape, and texture, these systems can detect diseases before
-                they spread, allowing for timely intervention. Early detection
-                and treatment lead to healthier crops, reduced losses, and more
-                efficient use of resources in agriculture.
-              </p>
-              <div className="d-flex justify-content-center  mt-5">
-                <NavLink to="/cropdisease">
-                  <button className="btn btn-outline-primary me-3">
-                    Detect Now
                   </button>
                 </NavLink>
                 <button className="btn btn-outline-secondary">Know More</button>

@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
   };
 
-  const baseURL = "http://127.0.0.1:5000";
+  const baseURL = "https://agrismart-xomi.onrender.com";
 
   let isLoggedIn = !!token;
 

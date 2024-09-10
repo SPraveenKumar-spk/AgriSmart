@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../store/AuthContext";
 function CropRecommend() {
+    const {baseURL } = useAuth();
   const navigate = useNavigate();
   const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
