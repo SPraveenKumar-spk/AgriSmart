@@ -8,10 +8,10 @@ import tempfile
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'AgriSmart'
-app.config['CORS_ALLOW_ORIGINS'] = ['https://agri-smart-new.vercel.app']
+app.config['CORS_ALLOW_ORIGINS'] = ['http://localhost:5173']
 CORS(app)
 
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/SPraveenKumar-spk/AgriSmart-new/main/Server/models/"
+GITHUB_RAW_URL = "https://raw.githubusercontent.com/SPraveenKumar-spk/AgriSmart/main/Server/models/"
 
 def download_model_from_github(model_name):
     url = f"{GITHUB_RAW_URL}{model_name}"

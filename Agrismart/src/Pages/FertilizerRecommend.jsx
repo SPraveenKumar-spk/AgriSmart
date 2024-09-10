@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "../assets/FertilizerRecommend.png";
+import { useAuth } from "../store/AuthContext";
 function FertilizerRecommend() {
+  const { baseURL } = useAuth();
   const navigate = useNavigate();
   const [inputValue, setInputValues] = useState({
     temperature: "",
@@ -24,7 +26,7 @@ function FertilizerRecommend() {
     event.preventDefault();
 
     try {
-      const response = await fetch(`https://agrismart-new.onrender.com/api/fertilizer`, {
+      const response = await fetch(`${baseURL}/api/fertilizer`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
