@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "../assets/disease.jpg";
 import { FaSpinner } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../store/AuthContext";
 
 function CropDiseaseDetection() {
   const [imageSrc, setImageSrc] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
+  const pathSegments = location.pathname.split("/");
+  const currentPage = pathSegments[pathSegments.length - 1] || "/";
+
+  const { baseURL } = useAuth();
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -19,11 +25,40 @@ function CropDiseaseDetection() {
     }
   };
 
-  const handleDetectClick = () => {
+  const handleDetectClick = async () => {
+    if (!imageSrc) return;
     setLoading(true);
-    setTimeout(() => {
+
+    const byteString = atob(imageSrc.split(",")[1]);
+    const arrayBuffer = new ArrayBuffer(byteString.length);
+    const intArray = new Uint8Array(arrayBuffer);
+    for (let i = 0; i < byteString.length; i++) {
+      intArray[i] = byteString.charCodeAt(i);
+    }
+    const blob = new Blob([intArray], { type: "image/jpeg" });
+
+    const formData = new FormData();
+    formData.append("image", blob, imageSrc);
+    // formData.append("image", imageSrc);
+
+    try {
+      const response = await fetch(`${baseURL}/api/cropdisease`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send image to backend");
+      }
+
+      const result = await response.json();
+      console.log("Detection result:", result);
+      // Handle result as needed
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
 
   const handleNavigate = () => {
@@ -56,9 +91,7 @@ function CropDiseaseDetection() {
                       Home
                     </a>
                   </li>
-                  <li className="breadcrumb-item">
-                    <a href="#">User</a>
-                  </li>
+                  <li className="breadcrumb-item">{currentPage}</li>
                 </ol>
               </nav>
             </div>

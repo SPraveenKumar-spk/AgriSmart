@@ -1,8 +1,13 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../store/AuthContext";
 function CropRecommend() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const pathSegments = location.pathname.split("/");
+  const currentPage = pathSegments[pathSegments.length - 1] || "/";
+
   const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
     nitrogen: "",
@@ -68,12 +73,7 @@ function CropRecommend() {
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item">
-                      <a href="">User</a>
-                    </li>
-                    {/* <li class="breadcrumb-item active" aria-current="page">
-                      User Profile
-                    </li> */}
+                    <li class="breadcrumb-item">{currentPage}</li>
                   </ol>
                 </nav>
               </div>

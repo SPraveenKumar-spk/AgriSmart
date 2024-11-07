@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Image from "../assets/FertilizerRecommend.png";
 import { useAuth } from "../store/AuthContext";
 
 function FertilizerRecommend() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const pathSegments = location.pathname.split("/");
+  const currentPage = pathSegments[pathSegments.length - 1] || "/";
   const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
     temperature: "",
@@ -72,9 +75,7 @@ function FertilizerRecommend() {
                       Home
                     </a>
                   </li>
-                  <li class="breadcrumb-item">
-                    <a href="">User</a>
-                  </li>
+                  <li class="breadcrumb-item">{currentPage}</li>
                 </ol>
               </nav>
             </div>

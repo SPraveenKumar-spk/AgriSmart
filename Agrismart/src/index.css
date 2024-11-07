@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   &::-webkit-scrollbar {
     display: none;
   }
-}
+} */
 
 .loader {
   z-index: 10;
@@ -34,4 +34,33 @@ body {
   width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
+}
+
+
+
+.nav-link {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.scrollTop {
+  transition: transform 0.3s ease, color 0.3s ease;
+   color: #00ffcc;
+}
+.scrollTop:hover{
+  transform: translateY(-15px) ;
+  color: #ffd700;
+  behavior: "smooth";
+  cursor: pointer;
 }

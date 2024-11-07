@@ -1,30 +1,11 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem("token"));
-
-  const storeToken = (serverToken) => {
-    setToken(serverToken);
-    return localStorage.setItem("token", serverToken);
-  };
-
-  const LogoutUser = () => {
-    setToken("");
-    localStorage.removeItem("token");
-  };
-
   const baseURL = "https://agrismart-xomi.onrender.com";
-
-  let isLoggedIn = !!token;
-
   return (
-    <AuthContext.Provider
-      value={{ token, storeToken, LogoutUser, baseURL, isLoggedIn }}
-    >
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ baseURL }}>{children}</AuthContext.Provider>
   );
 };
 

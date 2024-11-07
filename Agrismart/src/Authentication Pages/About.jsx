@@ -1,115 +1,108 @@
-import cropImg from "../assets/crop.jpeg";
-import fertilizerImg from "../assets/fertilizer2.png";
-import yieldImg from "../assets/yield.jpg";
-import diseaseImg from "../assets/disease.jpg";
-import seedImg from "../assets/Seed.jpg";
+import { useNavigate } from "react-router-dom";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
-    <div className="container pt-5">
-      <div className="text-center mb-5">
-        <h1 className="display-4">About AgriSmart</h1>
-        <p className="lead">
-          AgriSmart is a cutting-edge smart agriculture system designed to
-          enhance farm productivity and sustainability. Our platform offers a
-          range of features to support modern agricultural practices.
+    <div className="bg-light min-vh-100 py-5">
+      <div className="container">
+        <button
+          className="btn btn-primary mb-4 fs-5"
+          onClick={() => navigate(-1)}
+        >
+          <IoMdArrowRoundBack size={25} className="me-2" /> Back
+        </button>
+        <h1 className="text-center  mb-4" style={{ color: "purple" }}>
+          About AgriSmart
+        </h1>
+        <p className="lead text-center mb-5">
+          Welcome to AgriSmart, a comprehensive AI-driven solution designed to
+          revolutionize the agriculture industry. Leveraging the power of
+          machine learning, AgriSmart helps farmers make informed decisions,
+          optimize crop yields, and enhance agricultural efficiency through
+          accurate recommendations and predictions.
         </p>
-      </div>
 
-      <div className="row mb-4">
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <img
-              src={cropImg}
-              className="card-img-top"
-              alt="Crop Recommendation"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Crop Recommendation</h5>
-              <p className="card-text">
-                Our system analyzes soil conditions and historical data to
-                recommend the best crops to grow for maximum yield and
-                sustainability.
-              </p>
+        <h2 className="text-success text-center mb-4">
+          Explore Our Features 🚀
+        </h2>
+
+        <div className="row">
+          <div className="col-md-6 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-primary">
+                  🌾 Crop Recommendation System
+                </h5>
+                <p className="card-text">
+                  Helps farmers identify the best crops to plant based on soil
+                  parameters, weather conditions, and other critical factors. It
+                  ensures optimal crop selection to maximize yield and
+                  sustainability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-primary">
+                  🌱 Fertilizer Recommendation
+                </h5>
+                <p className="card-text">
+                  Suggests the appropriate type and quantity of fertilizers
+                  required for a specific crop based on soil fertility and
+                  nutrient levels, improving crop quality while reducing
+                  excessive chemical use.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-primary">
+                  🌿 Crop Disease Detection
+                </h5>
+                <p className="card-text">
+                  Utilizes advanced image processing techniques to detect
+                  diseases in crops by analyzing leaf images. Early detection
+                  minimizes crop loss and improves plant health.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-primary">🌾 Yield Prediction</h5>
+                <p className="card-text">
+                  Uses predictive analytics to forecast crop yields by analyzing
+                  various environmental and agricultural factors. This assists
+                  farmers in future planning by providing accurate yield
+                  predictions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-primary">
+                  🌱 Seed Quality Detection
+                </h5>
+                <p className="card-text">
+                  Evaluates the quality of seeds, ensuring that only the best
+                  seeds are used for planting, enhancing germination rates.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <img
-              src={fertilizerImg}
-              className="card-img-top"
-              alt="Fertilizer Recommendation"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Fertilizer Recommendation</h5>
-              <p className="card-text">
-                We provide precise fertilizer recommendations based on soil
-                nutrients and crop requirements to ensure optimal growth.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <img
-              src={yieldImg}
-              className="card-img-top"
-              alt="Yield Prediction"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Yield Prediction</h5>
-              <p className="card-text">
-                Predictive analytics help forecast crop yields, allowing farmers
-                to plan and manage their resources more effectively.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="row mb-4">
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <img
-              src={diseaseImg}
-              className="card-img-top"
-              alt="Crop Disease Detection"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Crop Disease Detection</h5>
-              <p className="card-text">
-                Our system detects early signs of crop diseases using image
-                analysis and provides actionable insights for treatment.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card">
-            <img
-              src={seedImg}
-              className="card-img-top"
-              alt="Seed Quality Detection"
-            />
-            <div className="card-body text-center">
-              <h5 className="card-title">Seed Quality Detection</h5>
-              <p className="card-text">
-                Evaluate seed quality to ensure only the best seeds are used for
-                planting, improving overall crop health and yield.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-center mb-5">
-        <a href="/" className="btn btn-primary">
-          Go Back to Home
-        </a>
       </div>
     </div>
   );

@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Image from "../assets/YieldPredict.png";
 import { useAuth } from "../store/AuthContext";
 
 function YieldPredict() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const pathSegments = location.pathname.split("/");
+  const currentPage = pathSegments[pathSegments.length - 1] || "/";
   const { baseURL } = useAuth();
   const [inputValue, setInputValues] = useState({
     state: "",
@@ -64,7 +67,7 @@ function YieldPredict() {
             <div className="col">
               <nav
                 aria-label="breadcrumb"
-                class="bg-body-tertiary rounded-3 p-3 "
+                className="bg-body-tertiary rounded-3 p-3 "
                 style={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
               >
                 <ol className="breadcrumb mb-0">
@@ -73,9 +76,7 @@ function YieldPredict() {
                       Home
                     </a>
                   </li>
-                  <li className="breadcrumb-item">
-                    <a href="#">User</a>
-                  </li>
+                  <li className="breadcrumb-item">{currentPage}</li>
                 </ol>
               </nav>
             </div>
