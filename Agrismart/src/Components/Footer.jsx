@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className=" mt-5 bg-dark text-white position-absolute bottom-0 w-100 p-5">
+    <footer className=" mt-5 bg-dark text-white  p-5">
       <div className="container text-center">
         <div className="d-flex justify-content-center">
           <div className="col-md-4">
