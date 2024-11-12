@@ -10,6 +10,7 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.vgg19 import  preprocess_input 
 
 
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'AgriSmart'
 app.config['CORS_ALLOW_ORIGINS'] = ['https://agrismart-ai.vercel.app']
