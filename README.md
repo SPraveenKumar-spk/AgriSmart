@@ -24,7 +24,7 @@ The system evaluates the quality of seeds, ensuring that only the best seeds are
 # Technologies Used 💻
 AgriSmart is built using cutting-edge technologies to deliver reliable and fast solutions:
 
-Frontend: React.js, Bootstrap 5
-Backend: Flask (Python)
-Machine Learning: Scikit-learn, TensorFlow
-Deployment: Vercel for the frontend, Flask on render for the backend
+# Frontend: React.js, Bootstrap 5
+# Backend: Flask (Python)
+# Machine Learning: Scikit-learn, TensorFlow
+# Deployment: Vercel for the frontend, Flask on render for the backend
