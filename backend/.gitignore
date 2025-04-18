@@ -1,0 +1,4 @@
+.env
+venv
+models/Cropdisease.h5
+models/Yield.pkl
